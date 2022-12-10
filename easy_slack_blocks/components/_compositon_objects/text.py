@@ -9,11 +9,6 @@ class Text(dict):
 
     def __init__(self, text, text_type='mrkdwn', *, emoji=None, verbatim=None):
         if text_type == Text.MRKDWN:
-            if emoji is not None:
-                raise ValueError(
-                    'The \'emoji\' parameter is only usable when '
-                    '\'text_type\' is \'plain_text\'.'
-                )
             # Set default 'verbatim' value if none was passed
             if verbatim is None:
                 verbatim = False
